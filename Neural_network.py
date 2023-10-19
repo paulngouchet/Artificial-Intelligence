@@ -6,14 +6,14 @@ x = x/np.amax(x, axis = 0)
 y = y/100
 
 class Neural_Network(object):
-	def _init_(self)
-	#Define HyperParameters
-	self.inputLayerSize = 2
-	self.outputLayerSize = 1
-	self.hiddenLayerSize = 3
-
+	def __init__(self):
+		#Define HyperParameters
+		self.inputLayerSize = 2
+		self.outputLayerSize = 1
+		self.hiddenLayerSize = 3
+		
 	def forward(self, x):
-	#propagate inputs through network
+		#propagate inputs through network
 		self.z2 = np.dot(x, self.w1)
 		self.a2 = self.sigmoid(self.z2)
 		self.z3 = np.dot(self.a2, self.w2)
@@ -28,7 +28,6 @@ class Neural_Network(object):
 
 	def costFunction(self, y , yHat)
 		cost = sum(0.5*(y-yHat)**2)
-
 		return cost 
 
 	def costFunctionPrime(self, x, y):
@@ -45,7 +44,7 @@ class Neural_Network(object):
 #plot(testInput, sigmoid(testInput), LineWidth = 2)
 #grid(1)
 #you can pass directy the array in numpy and i will apply the function on each input and it will return the result also in form of as an array
-formula for propagation in a neural network
+#formula for propagation in a neural network
 z(2) = XW(1)    
 #z is an array having the different of scalar product of weight and input of each node(neuron) of the neural network
 a(2) = f(z(2))  #a is the result of applying the sigmoid function to each element of z matrix
@@ -55,8 +54,8 @@ from videoSupport import *
 from scipy import optimize
 
 class trainer(object):
-
-	def _init_(self, N):
+	
+	def __init__(self, N):
 		#Make local reference to Neural Network
 		self.N = N
 
